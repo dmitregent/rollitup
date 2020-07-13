@@ -1,5 +1,4 @@
-import React from 'react';
-import {Counter} from '../model/Counter'
+import React from 'react'
 
 interface ArtistBoardParams {
     artists: any[][]
@@ -28,8 +27,7 @@ export class ArtistBoard extends React.Component<ArtistBoardParams, any>{
     getItem(artistCount: any[]) {
         return (
             <tr>
-                <td>{artistCount[0]}</td>
-                <td>{artistCount[1]}</td>
+                {artistCount.map(columnValue => <td>{columnValue}</td>)}
             </tr>
         )
     }
