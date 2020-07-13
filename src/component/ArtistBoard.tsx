@@ -2,7 +2,7 @@ import React from 'react';
 import {Counter} from '../model/Counter'
 
 interface ArtistBoardParams {
-    artists: Counter[]
+    artists: any[][]
     monthNumber: number
 }
 
@@ -25,16 +25,16 @@ export class ArtistBoard extends React.Component<ArtistBoardParams, any>{
         return months[monthNumber - 1]
     }
 
-    getItem(artistCount: Counter) {
+    getItem(artistCount: any[]) {
         return (
             <tr>
-                <td>{artistCount.name}</td>
-                <td>{artistCount.count}</td>
+                <td>{artistCount[0]}</td>
+                <td>{artistCount[1]}</td>
             </tr>
         )
     }
 
-    getItems(artists: Counter[]) {
+    getItems(artists: any[][]) {
         return artists.map(this.getItem)
     }
 

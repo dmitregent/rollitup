@@ -12,7 +12,7 @@ export class DataFetcher extends React.Component<any, any> {
     }
 
     fetchData(monthNumber: number) {
-        fetch('/api/artist/byMonth/' + monthNumber, {
+        fetch('/groupBy/artist/agg/count/filter/month=' + monthNumber + '/limit/200', {
             headers: {
                 'Accept': 'application/json'
             }
